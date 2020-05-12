@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D32691FA-EA4A-4449-B7AC-6460630B1868}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>birkelime_birislem</RootNamespace>
-    <AssemblyName>birkelime_birislem</AssemblyName>
+    <RootNamespace>CountdownGame</RootNamespace>
+    <AssemblyName>CountdownGame</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -82,6 +82,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

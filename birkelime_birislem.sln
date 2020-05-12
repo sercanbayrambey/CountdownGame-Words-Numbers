@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "birkelime_birislem", "birkelime_birislem\birkelime_birislem.csproj", "{D32691FA-EA4A-4449-B7AC-6460630B1868}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountdownGame", "birkelime_birislem\CountdownGame.csproj", "{D32691FA-EA4A-4449-B7AC-6460630B1868}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
