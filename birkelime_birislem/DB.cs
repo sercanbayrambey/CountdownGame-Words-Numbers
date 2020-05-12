@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 
 
-namespace birkelime_birislem
+namespace CountDownGame
 {
     class DB
     {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
-namespace birkelime_birislem
+namespace CountDownGame
 {
     public partial class frmMain : MetroFramework.Forms.MetroForm
     {

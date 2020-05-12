@@ -1,4 +1,4 @@
-﻿namespace birkelime_birislem
+﻿namespace CountDownGame
 {
     partial class frmMain
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace birkelime_birislem
+namespace CountDownGame
 {
     class Operation
     {
