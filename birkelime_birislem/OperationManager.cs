@@ -54,41 +54,56 @@ namespace CountDownGame
             int selectedMathOperation;
             while (counter!=20000)
             {
-                int i1 = rnd.Next(AvailableNumbers.Count);
-                int i2= rnd.Next(AvailableNumbers.Count);
+                try
+                    { 
+                    int i1 = rnd.Next(AvailableNumbers.Count);
+                    int i2= rnd.Next(AvailableNumbers.Count);
 
-                selectedNumber = AvailableNumbers[i1];
-                selectedNumber2 = AvailableNumbers[i2];
+                    selectedNumber = AvailableNumbers[i1];
+                    selectedNumber2 = AvailableNumbers[i2];
 
-                if (i1 == i2 && AvailableNumbers.Count>1)
-                    continue;
+                    if (i1 == i2 && AvailableNumbers.Count>1)
+                        continue;
 
-                selectedMathOperation = rnd.Next(0, 4);
+                    selectedMathOperation = rnd.Next(0, 4);
 
-                currentFoundNumber = operation.MathOperation(selectedMathOperation, selectedNumber, selectedNumber2);
+                    currentFoundNumber = operation.MathOperation(selectedMathOperation, selectedNumber, selectedNumber2);
 
-                if (currentFoundNumber == -1)
-                    continue;
+                    if (currentFoundNumber == -1)
+                        continue;
 
-                AvailableNumbers.Remove(selectedNumber);
-                AvailableNumbers.Remove(selectedNumber2);
-                AvailableNumbers.Add(currentFoundNumber);
+                    AvailableNumbers.Remove(selectedNumber);
+                    AvailableNumbers.Remove(selectedNumber2);
+                    AvailableNumbers.Add(currentFoundNumber);
 
                
-                if (Math.Abs(currentFoundNumber - NumberToBeFound) < 9)
-                {
-                    FoundCloseNumbers.Add(currentFoundNumber);
-                    operation.ResultFound = currentFoundNumber;
-                    operationList.Add(operation);
-                    Reset();
-                }
+                    if (Math.Abs(currentFoundNumber - NumberToBeFound) < 9)
+                    {
+                        FoundCloseNumbers.Add(currentFoundNumber);
+                        operation.ResultFound = currentFoundNumber;
+                        operationList.Add(operation);
+                        Reset();
+                    }
                 
             
-                if (counter % 20 == 0 || AvailableNumbers.Count<=1)
-                    Reset();
-                counter += 1;
+                    if (counter % 20 == 0 || AvailableNumbers.Count<=1)
+                        Reset();
+                    counter += 1;
+                }
+                catch
+                {
+                    continue;
+                }
             }
-            int closest = FoundCloseNumbers.Aggregate((x, y) => Math.Abs(x - NumberToBeFound) < Math.Abs(y - NumberToBeFound) ? x : y);
+            int closest = 0;
+            try
+            { 
+                closest = FoundCloseNumbers.Aggregate((x, y) => Math.Abs(x - NumberToBeFound) < Math.Abs(y - NumberToBeFound) ? x : y);
+            }
+            catch
+            {
+                return  new Operation();
+            }
 
             Operation closestOperation = new Operation();
             foreach (var item in operationList)
